@@ -27,13 +27,15 @@ function createPessoa(event) {
     const nome = document.getElementById('nome').value;
     const idade = document.getElementById('idade').value;
     const profissao = document.getElementById('profissao').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
 
     fetch(baseURL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nome, idade, profissao }),
+        body: JSON.stringify({ nome, idade, profissao, email, senha }),
     })
     .then(response => {
         if (response.ok) {

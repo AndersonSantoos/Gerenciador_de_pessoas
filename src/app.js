@@ -5,6 +5,8 @@ const pessoaRouter = require("./routes/pessoaRoutes");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+
+
 app.use(cors()); 
 app.use(bodyParser.json());
 

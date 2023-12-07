@@ -28,15 +28,20 @@ exports.getById = async (req, res) => {
 };
 
 exports.create = async (req, res) => {
-  const { nome, idade, profissao } = req.body;
+  const { nome, idade, profissao, email, senha } = req.body;
 
   try {
-    await Pessoa.create(nome, idade, profissao);
-    res.status(201).json({ message: 'Pessoa criada com sucesso.' });
+    const result = await Pessoa.create(nome, idade, profissao, email, senha);
+    if (result.success) {
+      res.status(201).json({ message: result.message });
+    } else {
+      res.status(500).json({ error: result.message });
+    }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao criar a pessoa.' });
+    res.status(500).json({ error: "Erro ao realizar a criação." });
   }
+  
 };
 
 exports.update = async (req, res) => {
