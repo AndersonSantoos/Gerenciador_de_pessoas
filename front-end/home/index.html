@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>API Front-end</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Pessoas</h1>
+
+        
+        <button onclick="getAllPessoas()">Pessoas cadastradas</button>
+        
+        <div id="pessoasList"></div>
+        <div id="mensagem" style="margin-top: 10px; color: green;"></div>
+        
+        <h2>Cadastre-se aqui!</h2>
+        <form onsubmit="createPessoa(event)">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+        
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" required>
+        
+            <label for="profissao">Profissão:</label>
+            <input type="text" id="profissao" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" required>
+        
+            <button type="submit">Criar Pessoa</button>
+            <!-- Elemento para exibir mensagens -->
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
